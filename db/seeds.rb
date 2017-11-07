@@ -1,25 +1,81 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 Puppy.destroy_all
 
-puppies = [
-  {
-    name: "Jean Guy"
-  },
-  {
-    name: "Poppy"
-  },
-  {
-    name: "Boule de Neige"
-  },
-  {
-    name: "Chapka"
-  }
-]
+puppy = Puppy.new(
+  name: Faker::Pokemon.name,
+  address: Faker::Address.street_name,
+  description: Faker::RickAndMorty.quote,
+  breed: "Labrador"
+    )
+puppy.save!
 
-Puppy.create!(puppies)
+puppy = Puppy.new(
+  name: Faker::Pokemon.name,
+  address: Faker::Address.street_name,
+  description: Faker::RickAndMorty.quote,
+  breed: "Rottweiler"
+    )
+puppy.save!
+
+puppy = Puppy.new(
+  name: Faker::Pokemon.name,
+  address: Faker::Address.street_name,
+  description: Faker::RickAndMorty.quote,
+  breed: "Beagle"
+    )
+puppy.save!
+
+puppy = Puppy.new(
+  name: Faker::Pokemon.name,
+  address: Faker::Address.street_name,
+  description: Faker::RickAndMorty.quote,
+  breed: "Bulldog"
+    )
+puppy.save!
+
+puppy = Puppy.new(
+  name: Faker::Pokemon.name,
+  address: Faker::Address.street_name,
+  description: Faker::RickAndMorty.quote,
+  breed: "Labrador"
+    )
+puppy.save!
+
+puppy = Puppy.new(
+  name: Faker::Pokemon.name,
+  address: Faker::Address.street_name,
+  description: Faker::RickAndMorty.quote,
+  breed: "Doberman"
+    )
+puppy.save!
+
+puppy = Puppy.new(
+  name: Faker::Pokemon.name,
+  address: Faker::Address.street_name,
+  description: Faker::RickAndMorty.quote,
+  breed: "King Charles"
+    )
+puppy.save!
+
+puppy = Puppy.new(
+  name: Faker::Pokemon.name,
+  address: Faker::Address.street_name,
+  description: Faker::RickAndMorty.quote,
+  breed: "Shiba Inu"
+    )
+puppy.save!
+
+puppy = Puppy.new(
+  name: Faker::Pokemon.name,
+  address: Faker::Address.street_name,
+  description: Faker::RickAndMorty.quote,
+  breed: "Border Collie"
+    )
+puppy.save!
+
+puppy = Puppy.new(
+  name: Faker::Pokemon.name,
+  address: Faker::Address.street_name,
+  description: Faker::RickAndMorty.quote,
+  breed: "Golden Retriever"
+    )
+puppy.save!
