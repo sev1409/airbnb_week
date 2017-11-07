@@ -5,3 +5,21 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Puppy.destroy_all
+
+puppies = [
+  {
+    name: "Jean Guy"
+  },
+  {
+    name: "Poppy"
+  },
+  {
+    name: "Boule de Neige"
+  },
+  {
+    name: "Chapka"
+  }
+]
+
+Puppy.create!(puppies)
