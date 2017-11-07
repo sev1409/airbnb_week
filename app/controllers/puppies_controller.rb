@@ -3,7 +3,7 @@ class PuppiesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show ]
 
   def index
-    @puppies = Puppy.all
+    @puppies = Puppy.where(breed: params[:query])
   end
 
   def show
