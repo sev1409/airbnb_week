@@ -8,18 +8,16 @@
 
 <div class="main-container">
   <div class="cards-container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        <div class="card" style="background-image: url(#)">
-          <% @puppies.each do |puppy| %>
-            <p><%= link_to puppy.name, puppy_path(puppy) %></p>
-          <% end %>
+      <% @puppies.each do |puppy| %>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="card" style="background-image: url(#)">
+            <%= link_to puppy.name, puppy_path(puppy) %>
+          </div>
         </div>
-      </div>
-    </div>
+      <% end %>
   </div>
 
-  <div id="map"></div>
+    <div id="map"></div>
 </div>
 
 <script>

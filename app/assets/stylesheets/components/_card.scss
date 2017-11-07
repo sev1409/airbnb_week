@@ -1,5 +1,11 @@
 .main-container {
-  display:flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.cards-container{
+  display: flex;
 }
 
 .card {
