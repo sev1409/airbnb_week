@@ -1,2 +1,8 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h2>FOON home</h2>
+
+<div>
+  <%= form_tag(puppies_path, method: :get) do %>
+    <%= text_field_tag :query %>
+    <%= submit_tag 'Search' %>
+  <% end %>
+</div>
