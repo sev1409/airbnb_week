@@ -1,2 +1,42 @@
-<h1>Puppies#show</h1>
-<p>Find me in app/views/puppies/show.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+      <%= render "card", puppy: @puppy %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <div class="puppy-details">
+        <h1><strong><%= @puppy.name %></strong></h1>
+        <h2><%= @puppy.breed %></h2>
+        <p><%= @puppy.description %></p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <div class="puppy-booking">
+        <%= simple_form_for [@puppy, @booking] do |f| %>
+          <%= f.input :date %>
+          <%= f.button :submit %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <div class="puppy-reviews">
+        <%= simple_form_for [@puppy, @review] do |f| %>
+          <%= f.input :comment %>
+          <%= f.input :rating %>
+          <%= f.button :submit %>
+        <% end %>
+        <% @puppy.reviews.each do |review| %>
+          <p><%= review.user %></p>
+          <p><%= review.rating %></p>
+          <p><%= review.comment %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
