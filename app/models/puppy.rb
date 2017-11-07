@@ -1,4 +1,5 @@
 class Puppy < ApplicationRecord
+  has_attachment :photo
   has_many :booking
   has_many :reviews
   has_many :users, through: :bookings

@@ -9,6 +9,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'devise'
 gem 'redis'
 gem 'cloudinary'
+gem 'attachinary'
 gem 'faker'
 
 gem 'sass-rails'
