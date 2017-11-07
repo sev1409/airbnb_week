@@ -1,0 +1,7 @@
+<%= simple_form_for(@puppy) do |f| %>
+  <%= f.input :name, placeholder: "Boule de Neige" %>
+  <%= f.input :breed, placeholder: "Labrador" %>
+  <%= f.input :description, placeholder: "My dog is the best because..." %>
+  <%= f.input :photo, as: :attachinary %>
+  <%= f.button :submit, class: "btn btn-primary" %>
+<% end %>
