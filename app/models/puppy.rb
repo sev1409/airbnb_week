@@ -1,8 +1,9 @@
 class Puppy < ApplicationRecord
   has_attachment :photo
-  has_many :booking
+  has_many :bookings
   has_many :reviews
-  has_many :users, through: :bookings
+  # has_many :users, through: :bookings
+  belongs_to :user
 
   validates :name, presence: true
   validates :address, presence: true
