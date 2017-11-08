@@ -4,7 +4,11 @@ class PuppiesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @puppies = Puppy.where(breed: params[:query])
+    @flats = Flat.where.not(latitude: nil, longitude: nil)
+
+    @hash = Gmaps4rails.build_markers(@flats) do |flat, marker|
+      marker.lat flat.latitude
+      marker.lng flat.longitude
   end
 
   def show
