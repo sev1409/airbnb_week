@@ -1,10 +1,7 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-6">
-      <div class="user-details">
-        <h1><%= @user.email %></h1>
-        <h1><%= @user.last_name %></h1>
-        <h2><%= @user.age %></h2>
-      </div>
-    </div>
-  </div>
+
+        <h2><%= @user.first_name %></h2>
+        <h2><%= @user.last_name %></h2>
+        <h3><%= @user.age %></h3>
+
+
+<p><%= link_to "Add a puppy", new_puppy_path %></p>
