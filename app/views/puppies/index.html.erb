@@ -10,11 +10,8 @@
   <div class="cards-container">
       <% @puppies.each do |puppy| %>
         <div class="col-xs-12 col-sm-6 col-md-4">
-          <div class="card" style="background-image: url(#)">
+          <div class="card" style="background-image: url('<%= cl_image_path puppy.photo.path, width: 200, height: 300, crop: :fill %>')">
             <%= link_to puppy.name, puppy_path(puppy) %>
-            <% if puppy.photo? %>
-              <%= cl_image_tag puppy.photo.path, width: 200, height: 300, crop: :fill %>
-            <% end %>
           </div>
         </div>
       <% end %>
