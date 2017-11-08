@@ -1,7 +1,7 @@
 class PuppiesController < ApplicationController
   before_action :set_puppy, only: [:show, :edit, :destroy]
   # What can the user see without logging in
-  skip_before_action :authenticate_user!, only: [:index]
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     @puppies = Puppy.where(breed: params[:query])

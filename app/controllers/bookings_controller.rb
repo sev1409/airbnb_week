@@ -1,6 +1,8 @@
 class BookingsController < ApplicationController
   before_action :set_puppy
 
+  skip_before_action :authenticate_user!, only: [:create]
+
   def show
   end
 
