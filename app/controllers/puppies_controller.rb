@@ -4,7 +4,12 @@ class PuppiesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @puppies = Puppy.where(breed: params[:query])
+    @puppies = Puppy.where.not(latitude: nil, longitude: nil)
+
+    @hash = Gmaps4rails.build_markers(@puppies) do |puppy, marker|
+      marker.lat puppy.latitude
+      marker.lng puppy.longitude
+    end
   end
 
   def show
@@ -49,6 +54,6 @@ class PuppiesController < ApplicationController
   end
 
   def puppy_params
-    params.require(:puppy).permit(:name, :breed, :photo)
+    params.require(:puppy).permit(:name, :breed, :photo, :address)
   end
 end
