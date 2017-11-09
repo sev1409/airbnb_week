@@ -1,1 +1,14 @@
-// Specific CSS for your home-page
+.banner.index{
+  height: calc(100vh - 70px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(https://typeset-beta.imgix.net/rehost%2F2016%2F9%2F13%2F68433234-26d0-42e4-ad7e-ef2f76b600b6.jpg);
+  background-position: center;
+  background-size: cover;
+  h1 {
+    padding: 0px;
+    color: white;
+    margin-bottom: 30px;
+  }
+}

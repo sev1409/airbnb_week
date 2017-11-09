@@ -1,5 +1,15 @@
+.cards-container {
+  padding-right: 15px;
+}
+
+.cards-dimension {
+  height: 250px;
+  padding: 5px;
+}
+
 .card {
   flex: 1 1 auto;
+  width: 100%;
   margin: 10px;
   border-radius: 1px;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
