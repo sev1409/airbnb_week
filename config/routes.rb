@@ -1,15 +1,17 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  resources :users, only: [:show]
+  resources :users, only: [:show] do
+    resources :bookings, only: [:index]
+  end
 
   root to: 'pages#home'
   resources :puppies do
-    resources :bookings, only: [:create]
+    resources :bookings, only: [:create, :update, :destroy]
     resources :reviews, only: [:create, :show]
   end
 
-  resources :bookings, only: [:show, :edit]
+
 
   mount Attachinary::Engine => "/attachinary"
 
