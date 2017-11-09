@@ -52,4 +52,18 @@
     <%= text_field_tag :query %>
     <%= submit_tag 'Search' %>
   <% end %>
+<div class="banner index">
+  <div class="banner_content">
+    <h1 class="text-center">Foon</h1>
+    <div class="text-center padded">
+      <div>
+        <%= form_tag(puppies_path, method: :get) do %>
+          <%= text_field_tag :query %>
+          <%= submit_tag 'Search' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
+
+

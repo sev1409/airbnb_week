@@ -1,7 +1,8 @@
 class BookingsController < ApplicationController
-  before_action :set_puppy, only: [:create]
+  before_action :set_puppy, only: [:create, :update]
 
-  def show
+  def index
+    @bookings = Booking.where("user_id = ?", "#{params[:user_id]}")
   end
 
   def create
@@ -10,15 +11,21 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     if @booking.save
       flash[:notice] = "Puppy #{@puppy.name} Booked !"
-      redirect_to puppy_path(@puppy)
+      redirect_to user_bookings_path(current_user)
     else
       render plain: "ERROR"
     end
   end
 
   def update
+    @booking = Booking.find(params[:id])
+    @booking.update(status: true)
   end
 
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+  end
   private
 
   def booking_params

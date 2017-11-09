@@ -34,8 +34,9 @@ ActiveRecord::Schema.define(version: 20171109220643) do
     t.date     "date"
     t.integer  "user_id"
     t.integer  "puppy_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.boolean  "status",     default: false
     t.index ["puppy_id"], name: "index_bookings_on_puppy_id", using: :btree
     t.index ["user_id"], name: "index_bookings_on_user_id", using: :btree
   end

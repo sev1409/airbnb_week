@@ -1,0 +1,24 @@
+<% @bookings.each do |booking| %>
+  <% if booking.puppy.user == current_user %>
+    <% if booking.status == true %>
+      <h2><%= booking.user.first_name %> has booked <%= booking.puppy.name %></h2>
+      <br>
+      <p>Date: <%= booking.date.strftime('%a %d %b %Y') %></p>
+    <% elsif booking.status == false %>
+      <h2><%= booking.user.first_name %> would like to book <%= booking.puppy.name %></h2>
+      <p>Date: <%= booking.date.strftime('%a %d %b %Y') %></p>
+
+      <%= link_to "Confirm", "/puppies/#{booking.puppy_id}/bookings/#{booking.id}", class: "btn btn-success", method: :patch %>
+        <%= link_to "Refuse", "/puppies/#{booking.puppy_id}/bookings/#{booking.id}", class: "btn btn-danger", method: :delete %>
+    <% end %>
+
+  <% elsif booking.user == current_user %>
+    <% if booking.status == true %>
+      <h2>Your booking of <%= booking.puppy.name %> has been status</h2>
+      <br>
+      <p>Date: <%= booking.date.strftime('%a %d %b %Y') %></p>
+    <% elsif booking.status == false %>
+      <h2>Your booking of <%= booking.puppy.name %> has yet to be status by <%= booking.puppy.user.first_name %></h2>
+    <% end %>
+  <% end %>
+<% end %>
