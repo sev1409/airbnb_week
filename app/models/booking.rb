@@ -1,6 +1,6 @@
 class Booking < ApplicationRecord
   belongs_to :user
-  has_many :puppies
+  belongs_to :puppy
 
   validates :date, presence: true
 end
