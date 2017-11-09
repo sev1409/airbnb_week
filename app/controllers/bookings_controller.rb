@@ -1,15 +1,17 @@
 class BookingsController < ApplicationController
   before_action :set_puppy
-
-  skip_before_action :authenticate_user!, only: [:create]
+  before_action :authenticate_user!
 
   def show
   end
 
   def create
-    @booking = Booking.new(booking_params)
-    @booking.puppy = @puppy
-    @booking.save!
+    render plain: "Puppy booked"
+    # @booking = Booking.new(booking_params)
+    # @booking.puppy = @puppy
+    # if @booking.save
+    #   redirect_to puppies_path
+    # end
   end
 
   def update
@@ -22,6 +24,6 @@ class BookingsController < ApplicationController
   end
 
   def set_puppy
-    @booking = Booking.find(params[:puppy_id])
+    @puppy = Puppy.find(params[:puppy_id])
   end
 end
