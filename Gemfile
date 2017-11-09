@@ -12,6 +12,7 @@ gem 'cloudinary'
 gem 'attachinary'
 gem 'faker'
 gem 'bootstrap-sass'
+gem 'omniauth-facebook'
 
 gem 'sass-rails'
 gem 'jquery-rails'

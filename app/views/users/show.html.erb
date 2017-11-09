@@ -1,7 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+      <% if current_user.facebook_picture_url? %>
+        <%= image_tag current_user.facebook_picture_url, class: "avatar" %>
+        <% elsif current_user.photo? %>
+        <%= cl_image_tag current_user.photo.path, class: "avatar" %>
+        <% else %>
+        <%= image_tag "http://placehold.it/30x30", class: "avatar" %>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-3 col-sm-4 col-md-6 col-lg-12">
+      <h2><%= @user.first_name %>' puppies</h2>
+        <% @user.puppies.each do |puppy| %>
+        <p><%= link_to puppy.name, puppy_path(puppy) %></p>
+        <% end %>
+      <p><%= link_to "Add a puppy", new_puppy_path %></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-3 col-sm-4 col-md-6 col-lg-12">
+      <h2><%= @user.first_name %>' activities</h2>
+      <p><%= link_to "Bookings", booking_path %></p>
+    </div>
+  </div>
 
-        <h2><%= @user.first_name %></h2>
-        <h2><%= @user.last_name %></h2>
-        <h3><%= @user.age %></h3>
-
-
-<p><%= link_to "Add a puppy", new_puppy_path %></p>

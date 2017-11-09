@@ -25,7 +25,7 @@ class PuppiesController < ApplicationController
     @puppy = Puppy.new(puppy_params)
     @puppy.user = current_user
     if @puppy.save
-      redirect_to puppy_path(@puppy)
+      redirect_to user_path(current_user)
     else
       render :new
     end
