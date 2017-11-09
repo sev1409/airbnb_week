@@ -1,11 +1,3 @@
-<div>
-  <%= form_tag(puppies_path, method: :get) do %>
-    <%= text_field_tag :query %>
-    <%= submit_tag 'Search' %>
-  <% end %>
-</div>
-
-
 <div class="main-container">
   <div class="cards-container">
       <% @puppies.each do |puppy| %>
