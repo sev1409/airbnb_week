@@ -1,18 +1,21 @@
-<div>
-  <%= form_tag(puppies_path, method: :get) do %>
-    <%= text_field_tag :query %>
-    <%= submit_tag 'Search' %>
-  <% end %>
-</div>
-
-
 <div class="main-container">
   <div class="cards-container">
     <div class="row">
       <% @puppies.each do |puppy| %>
         <div class="col-xs-12 col-sm-6 col-md-4">
-          <div class="card" style="background-image: url('<%= cl_image_path puppy.photo.path %>')">
-            <%= link_to puppy.name, puppy_path(puppy) %>
+          <div class="card">
+            <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.05)), url('<%= cl_image_path puppy.photo.path %>')">
+              <span class="card-name"><%= puppy.name %></span>
+              <a class="card-link" href="<%= puppy_path(puppy) %>"></a>
+            </div>
+            <div class="card-footer">
+              <p>Posted on 22/11/19</p>
+              <div class="controls">
+                <a href="#"><i class="fa fa-star"></i></a>
+                <a href="#"><i class="fa fa-heart"></i></a>
+                <a href="#"><i class="fa fa-share"></i></a>
+              </div>
+            </div>
           </div>
         </div>
       <% end %>
