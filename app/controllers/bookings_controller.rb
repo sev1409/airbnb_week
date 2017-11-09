@@ -1,17 +1,19 @@
 class BookingsController < ApplicationController
-  before_action :set_puppy
-  before_action :authenticate_user!
+  before_action :set_puppy, only: [:create]
 
   def show
   end
 
   def create
-    render plain: "Puppy booked"
-    # @booking = Booking.new(booking_params)
-    # @booking.puppy = @puppy
-    # if @booking.save
-    #   redirect_to puppies_path
-    # end
+    @booking = Booking.new(booking_params)
+    @booking.puppy = @puppy
+    @booking.user = current_user
+    if @booking.save
+      flash[:notice] = "Puppy #{@puppy.name} Booked !"
+      redirect_to puppy_path(@puppy)
+    else
+      render plain: "ERROR"
+    end
   end
 
   def update
