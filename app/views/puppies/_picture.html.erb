@@ -1,6 +1,5 @@
-  <div class="card">
+  <div class="picture">
     <% if puppy.photo? %>
       <span><%= cl_image_tag puppy.photo.path, width: 320, height: 250, crop: :fill %></span>
     <% end %>
-    <span class="card-category"><%= puppy.name %></span>
   </div>
