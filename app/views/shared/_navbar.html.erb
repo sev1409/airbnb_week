@@ -7,7 +7,7 @@
   <div>
     <%= form_tag(puppies_path, method: :get) do %>
       <%= text_field_tag :query %>
-      <%= submit_tag 'Search' %>
+      <%= submit_tag 'Search', class: "btn btn-secondary" %>
     <% end %>
   </div>
 
