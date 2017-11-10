@@ -17,29 +17,32 @@
       </div>
     </div>
   </div>
+
   <div class="row">
-    <div class="col-xs-12 col-sm-6">
-      <div class="puppy-booking">
-        <%= simple_form_for [@puppy, @booking] do |f| %>
-          <%= f.input :date %>
-          <%= f.button :submit %>
-        <% end %>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12 col-sm-6">
+    <div class="col-xs-6">
       <div class="puppy-reviews">
         <%= simple_form_for [@puppy, @review] do |f| %>
-          <%= f.input :comment %>
-          <%= f.input :rating %>
-          <%= f.button :submit %>
+        <%= f.label :comment %>
+        <%= f.input :comment, label:false, input_html: {class: "form-control comment"}%>
+        <%= f.label :rating %>
+        <%= f.input :rating, label:false, input_html: {class: "form-control rating"} %>
+        <%= f.button :submit, class: "btn btn-danger" %>
         <% end %>
         <% @puppy.reviews.each do |review| %>
-          <p><%= review.rating %></p>
-          <p><%= review.comment %></p>
+        <p><%= review.rating %></p>
+        <p><%= review.comment %></p>
         <% end %>
       </div>
     </div>
+    <div class="col-xs-4 col-xs-offset-1 col-md-2 col-md-offset-2">
+      <div class="puppy-booking">
+        <%= simple_form_for [@puppy, @booking] do |f| %>
+          <%= f.label :date %>
+          <%= f.input :date, label: false, as: :string, input_html:  {class: "form-control", "data-provide":"datepicker"} %>
+          <%= f.button :submit, "Book", class: "btn btn-danger btn-book" %>
+        <% end %>
+      </div>
+    </div>
+
   </div>
 </div>
