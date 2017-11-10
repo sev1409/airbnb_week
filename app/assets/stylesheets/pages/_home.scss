@@ -1,14 +1,72 @@
+body {
+  background-color: white;
+}
+
 .banner.index{
   height: calc(100vh - 70px);
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url(https://www.marialuisebauer.com/wp-content/uploads/2016/04/engagement-photos-with-dog-in-Hamburg-25-1920x1280.jpg);
+  background-image: linear-gradient(rgba(25,25,25,0.2), rgba(25,25,25,0.1)), url(https://www.marialuisebauer.com/wp-content/uploads/2016/04/engagement-photos-with-dog-in-Hamburg-25-1920x1280.jpg);
   background-position: center;
   background-size: cover;
   h1 {
+
+    font-size: 60px;
     padding: 0px;
     color: white;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
+  }
+  h2 {
+    color: white;
+    margin-top: 3px;
+    margin-bottom: 3px;
   }
 }
+
+.testymony-1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 200px;
+  margin-top: 40px;
+  p {
+    font-size: larger;
+    font-weight: bold;
+    color: #e78c80;
+  }
+}
+
+.testymony-2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 130px;
+  margin-top: 40px;
+  p {
+    font-size: larger;
+    font-weight: bold;
+    color: #e78c80;
+  }
+}
+
+.picture-home {
+  height: 400px;
+  width: auto;
+}
+
+.pictos {
+  padding: 60px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  border-bottom: 0.3px solid #D3CBD2;
+}
+
+.picto {
+  h3 {
+    color: #e78c80;
+    text-align: center;
+  }
+}
+

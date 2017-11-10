@@ -13,6 +13,7 @@ gem 'attachinary'
 gem 'faker'
 gem 'bootstrap-sass'
 gem 'omniauth-facebook'
+gem 'bootstrap-datepicker-rails'
 
 gem 'sass-rails'
 gem 'jquery-rails'

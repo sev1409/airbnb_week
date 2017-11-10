@@ -4,16 +4,19 @@
 @import "map";
 @import "card";
 @import "bookings";
+@import "picture";
+@import "buttons";
+@import "search-field";
 
 body {
   margin: 0;
-  font-family: 'Varela Round', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   font-size: 18px;
-  background: #F4F4F4;
+  background: white;
 }
 
 h1, h2, h3 {
-  font-family: 'Varela Round', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   font-weight: bold;
 }
 h1 {
@@ -26,6 +29,13 @@ h2 {
 h3 {
   font-size: 23px;
 }
+
+pre {
+  white-space: pre-wrap;
+  word-break: normal;
+  display: none;
+}
+
 .padded {
   padding: 30px 0;
 }
