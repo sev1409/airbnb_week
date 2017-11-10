@@ -1,8 +1,17 @@
-<%= simple_form_for(@puppy) do |f| %>
-  <%= f.input :name, placeholder: "Boule de Neige" %>
-  <%= f.input :address, placeholder: "Place de la Boule, Nanterre, France" %>
-  <%= f.input :breed, placeholder: "Labrador" %>
-  <%= f.input :description, placeholder: "My dog is the best because..." %>
-  <%= f.input :photo, as: :attachinary %>
-  <%= f.button :submit, class: "btn btn-primary" %>
+<div class="style-add">
+  <%= simple_form_for(@puppy) do |f| %>
+  <%= f.label :name, class: "label-name" %>
+  <%= f.input :name, label: false, placeholder: "Boule de Neige", input_html: {class: "input-name"}%>
+  <%= f.label :address, class: "label-address" %>
+  <%= f.input :address, label: false, placeholder: "Place de la Boule, Nanterre, France", input_html: {class: "input-address" }%>
+  <%= f.label :breed, class: "label-breed" %>
+  <%= f.input :breed, label: false, placeholder: "Labrador", input_html: {class: "input-breed"} %>
+  <%= f.label :description, class: "label-description" %>
+  <%= f.input :description, label: false, placeholder: "My dog is the best because...", input_html: {class: "input-description"} %>
+  <%= f.label :photo, class: "label-photo" %>
+  <%= f.input :photo, label: false, as: :attachinary %>
+  <%= f.button :submit, "Add your puppy", class: "btn btn-danger btn-add" %>
 <% end %>
+
+</div>
+
