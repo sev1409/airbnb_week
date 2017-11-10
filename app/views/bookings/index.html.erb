@@ -29,8 +29,7 @@
         <% end %>
       </li>
     </ul>
-    <% end %>
-    <% if booking.user == current_user %>
+    <% elsif booking.user == current_user %>
     <ul class="inbox text-center">
       <li class="message">
         <%= cl_image_tag booking.puppy.photo.path, class: "img-circle avatar" %>
