@@ -31,7 +31,7 @@
       <div class="puppy-booking">
         <%= simple_form_for [@puppy, @booking] do |f| %>
           <%= f.label :date %>
-          <%= f.input :date, label: false, as: :string, input_html:  {class: "form-control", "data-provide":"datepicker"} %>
+          <%= f.input :date, as: :string, input_html:  {class: "form-control", "data-provide":"datepicker"} %>
           <%= f.button :submit, "Book", class: "btn btn-danger btn-book" %>
         <% end %>
       </div>

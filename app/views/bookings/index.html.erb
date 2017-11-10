@@ -18,7 +18,9 @@
         <% if booking.status == false %>
         <div class="message-name">
           <h2><%= booking.puppy.name %></h2>
-          <p><%= booking.date.strftime('%a %d %b %Y') %></p>
+          <% if booking.date %>
+            <p><%= booking.date.strftime('%a %d %b %Y') %></p>
+          <% end %>
         </div>
         <div class="confirm-btn">
           <%= link_to "Confirm", "/puppies/#{booking.puppy_id}/bookings/#{booking.id}", class: "btn btn-success", method: :patch %>
@@ -33,7 +35,9 @@
         <%= cl_image_tag booking.puppy.photo.path, class: "img-circle avatar" %>
         <div class="message-name">
           <h2><%= booking.puppy.name %></h2>
-          <p><%= booking.date.strftime('%a %d %b %Y') %></p>
+          <% if booking.date %>
+            <p><%= booking.date.strftime('%a %d %b %Y') %></p>
+          <% end %>
         </div>
         <div class="message-status">
           <% if booking.status == true %>
