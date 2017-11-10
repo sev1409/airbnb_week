@@ -4,6 +4,8 @@
 @import "map";
 @import "card";
 @import "picture";
+@import "buttons";
+@import "search-field";
 
 body {
   margin: 0;
@@ -26,6 +28,13 @@ h2 {
 h3 {
   font-size: 23px;
 }
+
+pre {
+  white-space: pre-wrap;
+  word-break: normal;
+  display: none;
+}
+
 .padded {
   padding: 30px 0;
 }

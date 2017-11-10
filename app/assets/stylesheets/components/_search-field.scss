@@ -1,0 +1,17 @@
+.search-field {
+  width: 400px;
+  border: 1.5px solid #B8B8BB;
+  border-radius: 4px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background: rgba(255, 255, 255, .7);
+}
+
+::placeholder {
+  opacity: 0.8;
+  text-align: center;
+}
+
+::onclick {
+  text-align: center;
+}
