@@ -1,28 +1,38 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+<div class="activities">
+  <div class="user-info">
+        <ul class="user-identity list-unstyled">
+       <strong><li><%= current_user.first_name %> - <%= current_user.last_name %></li></strong>
+      <li><%= current_user.age %></li>
+    </ul>
+    <div class="user-photo">
       <% if current_user.facebook_picture_url? %>
-        <%= image_tag current_user.facebook_picture_url, class: "avatar" %>
+        <%= image_tag current_user.facebook_picture_url, class: "img-circle avatar" %>
         <% elsif current_user.photo? %>
-        <%= cl_image_tag current_user.photo.path, class: "avatar" %>
+        <%= cl_image_tag current_user.photo.path, class: "img-circle avatar" %>
         <% else %>
-        <%= image_tag "http://placehold.it/30x30", class: "avatar" %>
+        <%= image_tag "http://placehold.it/30x30", class: "img-circle avatar" %>
       <% end %>
     </div>
   </div>
-  <div class="row">
-    <div class="col-xs-3 col-sm-4 col-md-6 col-lg-12">
-      <h2><%= @user.first_name %>' puppies</h2>
+    <h2><%= @user.first_name %>' puppies</h2>
+  <ul class="inbox text-center">
+      <li class="message">
+    <div class="user-puppies">
         <% @user.puppies.each do |puppy| %>
-        <p><%= link_to puppy.name, puppy_path(puppy) %></p>
+        <%= link_to puppy_path(puppy) do %>
+        <% cl_image_tag puppy.photo.path, class: "img-circle avatar" %>
         <% end %>
-      <p><%= link_to "Add a puppy", new_puppy_path %></p>
+        <% end %>
+      <p><%= link_to "Add a puppy", new_puppy_path, class: "btn-medium" %></p>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-3 col-sm-4 col-md-6 col-lg-12">
+    </li>
+    </ul>
       <h2><%= @user.first_name %>' activities</h2>
-      <p><%= link_to "Bookings", user_bookings_path(current_user) %></p>
+    <ul class="inbox text-center">
+      <li class="message">
+      <p><%= link_to "Bookings", user_bookings_path(current_user), class: "btn-medium" %></p>
+      </li>
+      </ul>
     </div>
-  </div>
+
 
