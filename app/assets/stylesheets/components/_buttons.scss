@@ -1,5 +1,5 @@
 .btn-pink {
-  background-color: #ec9f94;
+  background-color: #e78c80;
   border: none;
   border-radius: 3px;
   padding: 3px 10px;
@@ -7,7 +7,5 @@
   text-align: center;
   margin-top: 20px;
   padding: 7px 26px;
-  :hover {
-    background-color: #DC938B;
-  }
+  transition: background 0.3s ease;
 }
