@@ -1,3 +1,6 @@
+
+<%= link_to "Profile", user_path(current_user) %>
+
 <% @bookings.each do |booking| %>
   <% if booking.puppy.user == current_user %>
     <% if booking.status == true %>
@@ -17,6 +20,7 @@
       <h2>Your booking of <%= booking.puppy.name %> has been status</h2>
       <br>
       <p>Date: <%= booking.date.strftime('%a %d %b %Y') %></p>
+      <%= link_to "GO", "https://www.google.fr/maps/dir//#{booking.puppy.address}" %>
     <% elsif booking.status == false %>
       <h2>Your booking of <%= booking.puppy.name %> has yet to be status by <%= booking.puppy.user.first_name %></h2>
     <% end %>
