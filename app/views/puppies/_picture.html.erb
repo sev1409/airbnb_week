@@ -1,5 +1,3 @@
-  <div class="picture">
-    <% if puppy.photo? %>
-      <span><%= cl_image_tag puppy.photo.path, width: 320, height: 250, crop: :fill %></span>
-    <% end %>
+  <div class="picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+         url('<%= cl_image_path puppy.photo.path %>')">
   </div>
