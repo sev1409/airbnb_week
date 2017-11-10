@@ -8,15 +8,8 @@
       <%= render "picture", puppy: @puppy %>
     </div>
   </div>
-  <div class="row">
-    <div class="col-xs-12 ">
-      <div class="puppy-details">
-        <h1><strong><%= @puppy.name %></strong></h1>
-        <h2><%= @puppy.breed %></h2>
-        <p><%= @puppy.description %></p>
-      </div>
-    </div>
-  </div>
+
+    <p class="puppy-description"><%= @puppy.description %></p>
 
   <div class="row">
     <div class="col-xs-6">

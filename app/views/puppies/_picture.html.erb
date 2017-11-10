@@ -1,3 +1,6 @@
-  <div class="picture" style="background-image: linear-gradient(rgba(100,10,110,0.2), rgba(100,10,110,0.2)),
-         url('<%= cl_image_path puppy.photo.path %>')">
+  <div class="picture" style="background-image: linear-gradient(rgba(100,10,110,0.2), rgba(100,10,110,0.2)), url('<%= cl_image_path puppy.photo.path %>')">
+          <div class="puppy-details">
+        <h1><strong><%= @puppy.name %></strong></h1>
+        <h2><%= @puppy.breed %></h2>
+      </div>
   </div>
