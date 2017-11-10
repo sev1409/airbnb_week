@@ -1,28 +1,50 @@
-
-<%= link_to "Profile", user_path(current_user) %>
-
-<% @bookings.each do |booking| %>
-  <% if booking.puppy.user == current_user %>
-    <% if booking.status == true %>
-      <h2><%= booking.user.first_name %> has booked <%= booking.puppy.name %></h2>
-      <br>
-      <p>Date: <%= booking.date.strftime('%a %d %b %Y') %></p>
-    <% elsif booking.status == false %>
-      <h2><%= booking.user.first_name %> would like to book <%= booking.puppy.name %></h2>
-      <p>Date: <%= booking.date.strftime('%a %d %b %Y') %></p>
-
-      <%= link_to "Confirm", "/puppies/#{booking.puppy_id}/bookings/#{booking.id}", class: "btn btn-success", method: :patch %>
-        <%= link_to "Refuse", "/puppies/#{booking.puppy_id}/bookings/#{booking.id}", class: "btn btn-danger", method: :delete %>
+ <div class="container">
+  <div class="tabs">
+      <%= link_to "Profile", user_path(current_user), class: "btn-medium" %>
+      <h2>Bookings</h2>
+  </div>
+  <div class="bookings text-center">
+    <% @bookings.each do |booking| %>
+    <% if booking.puppy.user == current_user %>
+    <ul class="inbox text-center">
+      <li class="message">
+        <% if booking.user.facebook_picture_url? %>
+        <%= image_tag booking.user.facebook_picture_url, class: "img-circle avatar" %>
+        <% elsif booking.user.photo? %>
+        <%= cl_image_tag booking.user.photo.path, class: "img-circle avatar" %>
+        <% else %>
+        <%= image_tag "http://placehold.it/30x30", class: "img-circle avatar" %>
+        <% end %>
+        <% if booking.status == false %>
+        <div class="message-name">
+          <h2><%= booking.puppy.name %></h2>
+          <p><%= booking.date.strftime('%a %d %b %Y') %></p>
+        </div>
+        <div class="confirm-btn">
+          <%= link_to "Confirm", "/puppies/#{booking.puppy_id}/bookings/#{booking.id}", class: "btn btn-success", method: :patch %>
+          <%= link_to "Refuse", "/puppies/#{booking.puppy_id}/bookings/#{booking.id}", class: "btn btn-danger", method: :delete %>
+        </div>
+        <% end %>
+      </li>
+    </ul>
+    <% elsif booking.user == current_user %>
+    <ul class="inbox text-center">
+      <li class="message">
+        <%= cl_image_tag booking.puppy.photo.path, class: "img-circle avatar" %>
+        <div class="message-name">
+          <h2><%= booking.puppy.name %></h2>
+          <p><%= booking.date.strftime('%a %d %b %Y') %></p>
+        </div>
+        <div class="message-status">
+          <% if booking.status == true %>
+          <%= link_to "GO", "https://www.google.fr/maps/dir//#{booking.puppy.address}" %>
+          <% elsif booking.status == false %>
+          <p>Pending</p>
+          <% end %>
+        </div>
+      </li>
+    </ul>
     <% end %>
-
-  <% elsif booking.user == current_user %>
-    <% if booking.status == true %>
-      <h2>Your booking of <%= booking.puppy.name %> has been status</h2>
-      <br>
-      <p>Date: <%= booking.date.strftime('%a %d %b %Y') %></p>
-      <%= link_to "GO", "https://www.google.fr/maps/dir//#{booking.puppy.address}" %>
-    <% elsif booking.status == false %>
-      <h2>Your booking of <%= booking.puppy.name %> has yet to be status by <%= booking.puppy.user.first_name %></h2>
     <% end %>
-  <% end %>
-<% end %>
+  </div>
+</div>
