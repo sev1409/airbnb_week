@@ -2,7 +2,10 @@ class BookingsController < ApplicationController
   before_action :set_puppy, only: [:create, :update]
 
   def index
-    @bookings = Booking.where("user_id = ?", "#{params[:user_id]}")
+    # recupere les bookings qui m'appartiennent
+    @my_bookings = Booking.where("user_id = ?", current_user.id)
+    # recuperer les bookings pour un chien qui m'appartient
+    @bookings = Booking.joins(:puppy).where('puppies.user_id = ?', current_user.id)
   end
 
   def create

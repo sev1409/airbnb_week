@@ -29,7 +29,10 @@
         <% end %>
       </li>
     </ul>
-    <% elsif booking.user == current_user %>
+    <% end %>
+    <% end %>
+    <% @my_bookings.each do |booking| %>
+    <% if booking.user == current_user %>
     <ul class="inbox text-center">
       <li class="message">
         <%= cl_image_tag booking.puppy.photo.path, class: "img-circle avatar" %>
