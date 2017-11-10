@@ -11,4 +11,5 @@ class Puppy < ApplicationRecord
   validates :name, presence: true
   validates :address, presence: true
   validates :breed, presence: true
+  validates :photo, presence: true
 end
