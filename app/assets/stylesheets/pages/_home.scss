@@ -3,12 +3,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url(https://www.marialuisebauer.com/wp-content/uploads/2016/04/engagement-photos-with-dog-in-Hamburg-25-1920x1280.jpg);
+  background-image: linear-gradient(rgba(25,25,25,0.2), rgba(25,25,25,0.1)), url(https://www.marialuisebauer.com/wp-content/uploads/2016/04/engagement-photos-with-dog-in-Hamburg-25-1920x1280.jpg);
   background-position: center;
   background-size: cover;
   h1 {
+
+    font-size: 60px;
     padding: 0px;
     color: white;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
+  }
+  h2 {
+    color: white;
+    margin-top: 3px;
+    margin-bottom: 3px;
   }
 }
