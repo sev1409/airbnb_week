@@ -1,0 +1,54 @@
+.picture {
+  height: 550px;
+  background-size: cover;
+}
+
+
+.puppy-details {
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.68);
+  mix-blend-mode: luminosity;
+  h1 {
+    text-align: left;
+    font-size: 40px;
+    color: #444242;
+    padding: 15px;
+  }
+
+  h2 {
+    font-weight: lighter;
+    color: #F7857A;
+    color: rgba(0, 0, 0, 0.63);
+    border-bottom: 3px solid rgba(255, 255, 255, 0.59);
+    color: #827e7e;
+    margin: 0;
+    padding: 0 15px;
+  }
+}
+
+.puppy-description {
+  padding: 20px;
+}
+
+.btn-book {
+  margin: 20px 0;
+
+}
+
+.puppy-reviews {
+  font-size: 18px;
+  .comment{
+  display: block;
+  width: 70%;
+  height: 60px;
+  margin-bottom: 20px;
+  }
+  .rating{
+  display: block;
+  width: 20%;
+  height: 40px;
+  margin-bottom: 20px;
+  }
+}
+
